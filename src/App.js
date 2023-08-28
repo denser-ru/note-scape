@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import MidiUploader from './components/MidiUploader';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const handleMidiUpload = (file) => {
+		// Здесь вы можете обработать загруженный MIDI файл
+		console.log('Uploaded MIDI file:', file);
+	};
+
+	return (
+		<div className="App">
+			<h1>NoteScape</h1>
+			<MidiUploader onMidiUpload={handleMidiUpload} />
+		</div>
+	);
 }
 
 export default App;
